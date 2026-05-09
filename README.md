@@ -41,13 +41,17 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Set your Grok API key
-export GROK_API_KEY="your_key_here"   # Windows: set GROK_API_KEY=your_key_here
+# 4. Set up your API key
+cp .env_example .env
+# Open .env and fill in one of:
+#   GROK_API_KEY=your_grok_key_here
+#   OPENAI_API_KEY=your_openai_key_here
 ```
 
 Dependencies:
 - `openai` — Grok's API is OpenAI-compatible; this is the only client library needed.
 - `duckduckgo-search` — free, no API key required.
+- `python-dotenv` — loads the .env file automatically at startup.
 
 ---
 
